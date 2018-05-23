@@ -16,6 +16,9 @@ through the `Dockerfile.template` file. With the `sed` command this template fil
 A startup shell script is created for every version created in the `~/bin` folder with the following
 naming convention `py$MAJOR_VERSION_NUMBER` e.g. `py3`
 
+During the build the `requirements.txt` file is installed by pip, so you can use this file to prepare the 
+python image according to your requirements.
+
 Look into the `install.sh` to see which versions are currently installed.
 
 # Running
