@@ -9,8 +9,8 @@ create_run_script() {
 }
 
 create_jupyter_script() {
-    cp jupyter.template.sh ~/bin/$1
-    chmod +x ~/bin/$1
+    sed "s/CONTAINER/$1/g" jupyter.template.sh > ~/bin/$1n
+    chmod +x ~/bin/$1n
 }
 
 clean_state() {
@@ -37,16 +37,18 @@ build_it() {
             echo "Could not create executable ~/bin/$2 as it already exists"
         else
             create_run_script $2
+            create_jupyter_script $2
         fi
     else
         create_run_script $2
+        create_jupyter_script $2
     fi
     rm -f Dockerfile 2>/dev/null
-    create_jupyter_script $2n
     clean_state $2
 }
 
 build_it 3.6.5-jessie py3
+build_it 2.7.15-jessie py2
 #build_it 3.6.5-alpine3.7 python3.6.5 python3
 
 docker rmi $(docker images -q -f dangling=true) 2>/dev/null
