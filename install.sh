@@ -8,6 +8,11 @@ create_run_script() {
     chmod +x ~/bin/$1
 }
 
+create_jupyter_script() {
+    cp jupyter.template.sh ~/bin/$1
+    chmod +x ~/bin/$1
+}
+
 clean_state() {
     if [ $ClEAN_STATE == 1 ]; then
         if [ "$(docker ps -q -f name=$1)" ]; then
@@ -37,6 +42,7 @@ build_it() {
         create_run_script $2
     fi
     rm -f Dockerfile 2>/dev/null
+    create_jupyter_script $2n
     clean_state $2
 }
 
