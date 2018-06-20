@@ -15,6 +15,6 @@ else
         docker start -i ${NAME}
     else
         echo "Init CONTAINER container..."
-        docker run -it --name ${NAME} -e DISPLAY=$IP:0 -v /tmp/.X11-unix:/tmp/.X11-unix -v "$(pwd):/project" -p 3000:3000 ivonet/${NAME}
+        docker run -it --name ${NAME} -e DISPLAY=$IP:0 -v /tmp/.X11-unix:/tmp/.X11-unix -v "$(pwd):/project" -p 3000:3000 -p 8888:8888 ivonet/${NAME}
     fi
 fi

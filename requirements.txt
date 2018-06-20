@@ -6,4 +6,5 @@ Pillow==5.0.0
 scipy==1.0.0
 sklearn==0.0
 tensorflow==1.6.0
-
+httpie==0.9.9
+jupyter==1.0.0
