@@ -48,7 +48,7 @@ build_it() {
 }
 
 build_it 3.6.5-jessie py3
-build_it 2.7.15-jessie py2
+#build_it 2.7.15-jessie py2
 #build_it 3.6.5-alpine3.7 python3.6.5 python3
 
 docker rmi $(docker images -q -f dangling=true) 2>/dev/null
