@@ -8,6 +8,8 @@ This project contains python versions to play with on your machine
     * to create the images with the different versions installed
     * to install run scripts in you `~/bin` folder
     
+NOTE: Only tested on my Macbook pro so no guarantees
+    
 # How it works
 
 Well based on the `install.sh` script a couple of python image versions are pulled and customized
@@ -40,3 +42,7 @@ at the end of this file:
     export PATH=~/bin:$PATH
 
 All should be fine now.
+
+# License
+
+DBAD
