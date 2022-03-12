@@ -14,9 +14,9 @@ NOTE: Only tested on my Macbook pro so no guarantees
 
 Well based on the `install.sh` script a couple of python image versions are pulled and customized
 through the `Dockerfile.template` file. With the `sed` command this template file is created into a 
-`Dockerfile` and build by docker into a `ivonet/py$VERSION` image.
+`Dockerfile` and build by docker into a `ivonet/pythonVERSION` image.
 A startup shell script is created for every version created in the `~/bin` folder with the following
-naming convention `py$MAJOR_VERSION_NUMBER` e.g. `py3`
+naming convention `pythonVERSION` e.g. `python3.7.5`
 
 During the build the `requirements.txt` file is installed by pip, so you can use this file to prepare the 
 python image according to your requirements.
